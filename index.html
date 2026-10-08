@@ -33,7 +33,7 @@
                 </div>
                 <div class="hidden sm:block text-right text-xs text-blue-200">
                     <p class="font-semibold"><i class="fa-solid fa-droplet"></i> HueWACO NRW Analytics</p>
-                    <p>Phiên bản 2.1 (Tiêu chuẩn IWA / NDF Standard)</p>
+                    <p>Phiên bản 2.2 (Tiêu chuẩn IWA / NDF Standard)</p>
                 </div>
             </div>
         </div>
@@ -52,27 +52,27 @@
                     </h2>
                     <div class="space-y-4 text-sm">
                         <div>
-                            <label class="block font-medium text-slate-700">Lưu lượng đêm tối thiểu ($Q_{MNF}$) [m³/h]:</label>
+                            <label class="block font-medium text-slate-700">Lưu lượng đêm tối thiểu (Q<sub>MNF</sub>) [m³/h]:</label>
                             <input type="number" step="0.01" id="q_mnf" value="11.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Giá trị lưu lượng tổng thấp nhất đo qua Datalogger/SCADA (thường từ 1h - 3h sáng).</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Áp lực ban đêm ($P_{đêm}$) [m cột nước]:</label>
+                            <label class="block font-medium text-slate-700">Áp lực ban đêm (P<sub>đêm</sub>) [mH<sub>2</sub>O]:</label>
                             <input type="number" step="0.1" id="p_dem" value="23.2" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                            <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Áp lực trung bình mạng lưới đo đếm được tại thời điểm xảy ra $Q_{MNF}$ (1 bar ≈ 10m).</span>
+                            <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Áp lực trung bình mạng lưới đo đếm được tại thời điểm xảy ra Q<sub>MNF</sub> (1 bar ≈ 10 mH<sub>2</sub>O).</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Khách hàng lớn dùng đêm ($Q_{khách\_lớn}$) [m³/h]:</label>
+                            <label class="block font-medium text-slate-700">Khách hàng lớn dùng đêm (Q<sub>khách_lớn</sub>) [m³/h]:</label>
                             <input type="number" step="0.01" id="q_khach_lon" value="0.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng tiêu thụ đêm thực tế của bệnh viện, khách sạn, nhà máy ca đêm... ghi nhận từ AMR/Datalogger.</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Áp lực trung bình 24h ($\bar{P}$) [m cột nước]:</label>
+                            <label class="block font-medium text-slate-700">Áp lực trung bình 24h (P<sub>TB</sub>) [mH<sub>2</sub>O]:</label>
                             <input type="number" step="0.1" id="p_tb" value="22.95" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Trung bình cộng 24 giá trị áp lực theo giờ trong ngày của vùng DMA.</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Tổng lưu lượng cấp ngày ($Q_{tổng}$) [m³/ngđ]:</label>
+                            <label class="block font-medium text-slate-700">Tổng lưu lượng cấp ngày (Q<sub>tổng</sub>) [m³/ngđ]:</label>
                             <input type="number" step="0.1" id="q_tong" value="918.2" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng khối lượng nước cấp vào vùng DMA trong cả ngày đêm 24 giờ.</span>
                         </div>
@@ -86,27 +86,27 @@
                     </h2>
                     <div class="space-y-4 text-sm">
                         <div>
-                            <label class="block font-medium text-slate-700">Số lượng đấu nối khách hàng ($N_c$) [cái]:</label>
+                            <label class="block font-medium text-slate-700">Số lượng đấu nối khách hàng (N<sub>c</sub>) [cái]:</label>
                             <input type="number" id="n_c" value="400" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng số đồng hồ đo đếm khách hàng/hộ dân trong khu vực DMA.</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Chiều dài ống chính ($L_m$) [km]:</label>
+                            <label class="block font-medium text-slate-700">Chiều dài ống chính (L<sub>m</sub>) [km]:</label>
                             <input type="number" step="0.01" id="l_m" value="5.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng chiều dài các tuyến ống truyền dẫn và phân phối chính.</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Chiều dài ống dịch vụ ($L_c$) [km]:</label>
+                            <label class="block font-medium text-slate-700">Chiều dài ống dịch vụ (L<sub>c</sub>) [km]:</label>
                             <input type="number" step="0.01" id="l_c" value="2.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng chiều dài ống đấu nối từ ống chính đến vị trí đồng hồ khách hàng.</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Định mức dùng đêm dân cư ($q_{đm}$) [lít/đ nối/h]:</label>
+                            <label class="block font-medium text-slate-700">Định mức dùng đêm dân cư (q<sub>đm</sub>) [lít/đ nối/h]:</label>
                             <input type="number" step="0.1" id="q_dm" value="2.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Định mức nhu cầu đêm tiêu chuẩn IWA (thường lấy từ 1.0 - 2.5 lít/đấu nối/giờ).</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Hệ số mũ áp lực ($N$):</label>
+                            <label class="block font-medium text-slate-700">Hệ số mũ áp lực (N):</label>
                             <input type="number" step="0.1" id="n_exp" value="1.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Phản ánh vật liệu ống (Ống kim loại: N=0.5-1.0; Ống nhựa: N=1.0-1.5; Mạng hỗn hợp: N=1.0).</span>
                         </div>
@@ -144,7 +144,7 @@
                     <!-- So sánh phương pháp -->
                     <div class="bg-slate-50 p-4 rounded-lg border text-sm space-y-2">
                         <div class="flex justify-between items-center text-slate-600">
-                            <span>Tỷ lệ thất thoát thô (Coi toàn bộ $Q_{MNF}$ là rò rỉ):</span>
+                            <span>Tỷ lệ thất thoát thô (Coi toàn bộ Q<sub>MNF</sub> là rò rỉ):</span>
                             <span class="font-semibold" id="raw_percent">-- %</span>
                         </div>
                         <div class="flex justify-between items-center text-slate-600">
@@ -163,45 +163,45 @@
 
                     <!-- Bước 1 -->
                     <div class="border-l-4 border-blue-500 pl-4 py-1">
-                        <h3 class="font-bold text-slate-700">Bước 1: Rò rỉ nền cho phép ($Q_b$)</h3>
-                        <span class="sub-text mb-2">Lượng rò rỉ nền rải rác không thể tránh khỏi tại các mối nối, van, khớp nối ở mức áp lực ban đêm $P_{đêm}$.</span>
-                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border">
-                            $$Q_b = \frac{(0.015 \cdot L_m + 0.016 \cdot N_c + 0.0004 \cdot L_c) \cdot P_{đêm}}{1000}$$
+                        <h3 class="font-bold text-slate-700">Bước 1: Rò rỉ nền cho phép (Q<sub>b</sub>)</h3>
+                        <span class="sub-text mb-2">Lượng rò rỉ nền rải rác không thể tránh khỏi tại các mối nối, van, khớp nối ở mức áp lực ban đêm P<sub>đêm</sub>.</span>
+                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
+                            $$Q_b = \frac{(0.015 \cdot L_m + 0.016 \cdot N_c + 0.0004 \cdot L_c) \cdot P_{\text{đêm}}}{1000}$$
                         </p>
-                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả $Q_b$: <span id="step1_val">--</span> m³/h</p>
-                        <span class="sub-text">Hệ số 0.015 (ống chính), 0.016 (đấu nối), 0.0004 (ống dịch vụ) tính theo lít/giờ trên 1m áp lực.</span>
+                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>b</sub>: <span id="step1_val">--</span> m³/h</p>
+                        <span class="sub-text">Hệ số 0.015 (ống chính), 0.016 (đấu nối), 0.0004 (ống dịch vụ) tính theo lít/giờ trên 1 mH<sub>2</sub>O áp lực.</span>
                     </div>
 
                     <!-- Bước 2 -->
                     <div class="border-l-4 border-blue-500 pl-4 py-1">
-                        <h3 class="font-bold text-slate-700">Bước 2: Tiêu thụ nước đêm hợp lệ của Khách hàng ($Q_{khách\_đêm}$)</h3>
+                        <h3 class="font-bold text-slate-700">Bước 2: Tiêu thụ nước đêm hợp lệ của Khách hàng (Q<sub>khách_đêm</sub>)</h3>
                         <span class="sub-text mb-2">Tổng lượng nước khách hàng thực tế tiêu thụ ban đêm (bao gồm hộ dân tiêu thụ nhỏ lẻ & khách hàng lớn).</span>
-                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border">
-                            $$Q_{khách\_đêm} = Q_{khách\_lớn} + \frac{N_c \cdot q_{đm}}{1000}$$
+                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
+                            $$Q_{\text{khách\_đêm}} = Q_{\text{khách\_lớn}} + \frac{N_c \cdot q_{\text{đm}}}{1000}$$
                         </p>
-                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả $Q_{khách\_đêm}$: <span id="step2_val">--</span> m³/h</p>
+                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>khách_đêm</sub>: <span id="step2_val">--</span> m³/h</p>
                         <span class="sub-text">Bao gồm xả bể tự động hộ gia đình, sử dụng sinh hoạt đêm và các đơn vị dịch vụ/ca đêm.</span>
                     </div>
 
                     <!-- Bước 3 -->
                     <div class="border-l-4 border-blue-500 pl-4 py-1">
-                        <h3 class="font-bold text-slate-700">Bước 3: Rò rỉ thực sự ban đêm ($Q_{RealLoss\_đêm}$)</h3>
+                        <h3 class="font-bold text-slate-700">Bước 3: Rò rỉ thực sự ban đêm (Q<sub>RealLoss_đêm</sub>)</h3>
                         <span class="sub-text mb-2">Lượng nước rò rỉ thực sự từ các điểm vỡ/khe hở trên mạng lưới (đối tượng thực tế cần dò tìm & sửa chữa).</span>
-                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border">
-                            $$Q_{RealLoss\_đêm} = Q_{MNF} - Q_{khách\_đêm} - Q_b$$
+                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
+                            $$Q_{\text{RealLoss\_đêm}} = Q_{\text{MNF}} - Q_{\text{khách\_đêm}} - Q_b$$
                         </p>
-                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả $Q_{RealLoss\_đêm}$: <span id="step3_val">--</span> m³/h</p>
+                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>RealLoss_đêm</sub>: <span id="step3_val">--</span> m³/h</p>
                         <span class="sub-text">Giá trị rò rỉ ròng tại mốc thời điểm đêm tối thiểu (1h00 - 3h00 sáng).</span>
                     </div>
 
                     <!-- Bước 4 -->
                     <div class="border-l-4 border-blue-500 pl-4 py-1">
-                        <h3 class="font-bold text-slate-700">Bước 4: Tổng lượng rò rỉ cả ngày đêm 24h ($Q_{Rò\_rỉ\_ngày}$)</h3>
-                        <span class="sub-text mb-2">Quy đổi lượng rò rỉ trong cả 24 giờ có hiệu chỉnh theo sự giảm áp lực ban ngày ($\bar{P}$).</span>
-                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border">
-                            $$Q_{Rò\_rỉ\_ngày} = 24 \cdot Q_{RealLoss\_đêm} \cdot \left(\frac{\bar{P}}{P_{đêm}}\right)^N$$
+                        <h3 class="font-bold text-slate-700">Bước 4: Tổng lượng rò rỉ cả ngày đêm 24h (Q<sub>Rò_rỉ_ngày</sub>)</h3>
+                        <span class="sub-text mb-2">Quy đổi lượng rò rỉ trong cả 24 giờ có hiệu chỉnh theo sự giảm áp lực ban ngày (P<sub>TB</sub>).</span>
+                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
+                            $$Q_{\text{Rò\_rỉ\_ngày}} = 24 \cdot Q_{\text{RealLoss\_đêm}} \cdot \left(\frac{P_{\text{TB}}}{P_{\text{đêm}}}\right)^N$$
                         </p>
-                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả $Q_{Rò\_rỉ\_ngày}$: <span id="step4_val">--</span> m³/ngđ</p>
+                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>Rò_rỉ_ngày</sub>: <span id="step4_val">--</span> m³/ngđ</p>
                         <span class="sub-text">Do ban ngày áp lực giảm do nhu cầu dùng nước tăng, lượng rò rỉ thực tế ban ngày sẽ tự động giảm tương ứng.</span>
                     </div>
 
@@ -209,8 +209,8 @@
                     <div class="border-l-4 border-green-500 pl-4 py-1">
                         <h3 class="font-bold text-slate-700">Bước 5: Tỷ lệ Rò rỉ Thực sự (Real Loss %)</h3>
                         <span class="sub-text mb-2">Tỷ lệ phần trăm giữa tổng lượng nước rò rỉ thực sự trong ngày với tổng lưu lượng nước cấp vào DMA.</span>
-                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border">
-                            $$\text{Tỷ lệ Rò rỉ (\%)} = \left(\frac{Q_{Rò\_rỉ\_ngày}}{Q_{tổng}}\right) \cdot 100\%$$
+                        <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
+                            $$\text{Tỷ lệ Rò rỉ (\%)} = \left(\frac{Q_{\text{Rò\_rỉ\_ngày}}}{Q_{\text{tổng}}}\right) \cdot 100\%$$
                         </p>
                         <p class="text-sm font-semibold text-green-700 mt-2">Kết quả Tỷ lệ Rò rỉ: <span id="step5_val">--</span> %</p>
                         <span class="sub-text">Chỉ số đánh giá chính xác hiệu quả quản lý chống thất thoát nước (NRW) cho vùng DMA.</span>
