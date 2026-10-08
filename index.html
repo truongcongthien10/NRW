@@ -34,12 +34,12 @@
         <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">Công cụ Tính toán Thất thoát nước Thực sự (Real Loss)</h1>
+                    <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">Công cụ Tính toán lượng Nước thất thoát (Real Loss)</h1>
                     <p class="text-blue-100 text-sm sm:text-base mt-1">Phương pháp Lưu lượng đêm tối thiểu (MNF) theo tiêu chuẩn IWA - Áp dụng chuyên ngành cho HueWACO</p>
                 </div>
                 <div class="hidden sm:block text-right text-xs text-blue-200">
                     <p class="font-semibold"><i class="fa-solid fa-droplet"></i> HueWACO NRW Analytics</p>
-                    <p>Phiên bản 2.3 (Tiêu chuẩn IWA / NDF Standard)</p>
+                    <p>Phiên bản 1.0 (Tiêu chuẩn IWA / NDF Standard)</p>
                 </div>
             </div>
         </div>
@@ -89,26 +89,26 @@
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Trung bình cộng 24 giá trị áp lực theo giờ trong ngày của vùng DMA.</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Tổng lưu lượng cấp ngày (Q<sub>tổng</sub>) [m³/ngđ]:</label>
+                            <label class="block font-medium text-slate-700">Tổng lưu lượng vào vùng trong ngày (Q<sub>tổng</sub>) [m³/ngđ]:</label>
                             <input type="number" step="0.1" id="q_tong" value="918.2" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng khối lượng nước cấp vào vùng DMA trong cả ngày đêm 24 giờ.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- KHỐI 2: Hạ tầng DMA (Tô viền XANH LÁ CÂY nổi bật) -->
+                <!-- KHỐI 2: Hạ tầng CMA, SubCMA, DMZ (Tô viền XANH LÁ CÂY nổi bật) -->
                 <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-500 relative">
                     <div class="absolute -top-3 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-0.5 rounded-full shadow-sm">
                         Khối 2
                     </div>
                     <h2 class="text-lg font-bold text-emerald-800 border-b pb-3 mb-4 flex items-center">
-                        <i class="fa-solid fa-network-wired mr-2"></i> 2. Hạ tầng Mạng lưới DMA
+                        <i class="fa-solid fa-network-wired mr-2"></i> 2. Hạ tầng Mạng lưới CMA, SubCMA, DMZ
                     </h2>
                     <div class="space-y-4 text-sm">
                         <div>
-                            <label class="block font-medium text-slate-700">Số lượng đấu nối khách hàng (N<sub>c</sub>) [cái]:</label>
+                            <label class="block font-medium text-slate-700">Số lượng đấu nối (N<sub>c</sub>) [hộ]:</label>
                             <input type="number" id="n_c" value="400" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
-                            <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng số đồng hồ đo đếm khách hàng/hộ dân trong khu vực DMA.</span>
+                            <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng số khách hàng đấu nối trong khu vực tính toán.</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Chiều dài ống chính (L<sub>m</sub>) [km]:</label>
@@ -118,12 +118,12 @@
                         <div>
                             <label class="block font-medium text-slate-700">Chiều dài ống dịch vụ (L<sub>c</sub>) [km]:</label>
                             <input type="number" step="0.01" id="l_c" value="2.0" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
-                            <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng chiều dài ống đấu nối từ ống chính đến vị trí đồng hồ khách hàng.</span>
+                            <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng chiều dài ống nhánh từ ống chính đến đồng hồ khách hàng.</span>
                         </div>
                         <div>
-                            <label class="block font-medium text-slate-700">Định mức dùng đêm dân cư (q<sub>đm</sub>) [lít/đ nối/h]:</label>
+                            <label class="block font-medium text-slate-700">Lưu lượng rò rỉ nền cho phép (q<sub>n</sub>) [lít/đ nối/h]:</label>
                             <input type="number" step="0.1" id="q_dm" value="2.0" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
-                            <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Định mức nhu cầu đêm tiêu chuẩn IWA (thường lấy từ 1.0 - 2.5 lít/đấu nối/giờ).</span>
+                            <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Lượng nước rò rỉ nền cho phép vào ban đêm (tiêu chuẩn IWA - thường lấy từ 1.0 - 2.5 lít/đấu nối/giờ).</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Hệ số mũ áp lực (N):</label>
