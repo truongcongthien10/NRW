@@ -202,7 +202,7 @@
                         <h3 class="font-bold text-slate-700">Bước 2: Tiêu thụ nước đêm hợp lệ của Khách hàng (Q<sub>kh.đêm</sub>)</h3>
                         <span class="sub-text mb-2">Tổng lượng nước khách hàng thực tế tiêu thụ ban đêm (bao gồm hộ dân tiêu thụ nhỏ lẻ & khách hàng lớn).</span>
                         <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
-                            $$Q_{\text{khách\_đêm}} = Q_{\text{khách\_lớn}} + \frac{N_c \cdot q_{\text{đm}}}{1000}$$
+                            $$Q_{\text{kh.đêm}} = Q_{\text{khách hàng lớn}} + \frac{N_c \cdot q_{\text{n}}}{1000}$$
                         </p>
                         <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>khách_đêm</sub>: <span id="step2_val">--</span> m³/h</p>
                         <span class="sub-text">Bao gồm xả nước các hộ gia đình, sử dụng sinh hoạt đêm và các dịch vụ/ca đêm.</span>
@@ -213,7 +213,7 @@
                         <h3 class="font-bold text-slate-700">Bước 3: Rò rỉ thực sự ban đêm (Q<sub>RealLoss_đêm</sub>)</h3>
                         <span class="sub-text mb-2">Lượng nước rò rỉ thực sự từ các điểm vỡ/khe hở trên mạng lưới (đối tượng thực tế cần dò tìm & sửa chữa).</span>
                         <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
-                            $$Q_{\text{RealLoss\_đêm}} = Q_{\text{MNF}} - Q_{\text{khách\_đêm}} - Q_b$$
+                            $$Q_{\text{RealLoss.đêm}} = Q_{\text{MNF}} - Q_{\text{kh.đêm}} - Q_b$$
                         </p>
                         <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>RealLoss.đêm</sub>: <span id="step3_val">--</span> m³/h</p>
                         <span class="sub-text">Giá trị rò rỉ tại mốc thời điểm đêm tối thiểu (1h00 - 3h00 sáng).</span>
