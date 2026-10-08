@@ -19,6 +19,12 @@
             display: block;
             line-height: 1.25;
         }
+        /* Style hiệu ứng khi chọn vào ô nhập liệu (Focus & Active) */
+        input[type="number"]:focus {
+            background-color: #fef08a !important; /* Hatch nền vàng nhạt */
+            border-color: #eab308 !important;
+            outline: none;
+        }
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans min-h-screen pb-12">
@@ -33,7 +39,7 @@
                 </div>
                 <div class="hidden sm:block text-right text-xs text-blue-200">
                     <p class="font-semibold"><i class="fa-solid fa-droplet"></i> HueWACO NRW Analytics</p>
-                    <p>Phiên bản 2.2 (Tiêu chuẩn IWA / NDF Standard)</p>
+                    <p>Phiên bản 2.3 (Tiêu chuẩn IWA / NDF Standard)</p>
                 </div>
             </div>
         </div>
@@ -45,84 +51,103 @@
             <!-- FORM NHẬP THÔNG SỐ (Left Column) -->
             <div class="lg:col-span-5 space-y-6">
                 
-                <!-- Nhóm 1: Dữ liệu vận hành -->
-                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                    <h2 class="text-lg font-bold text-blue-800 border-b pb-3 mb-4 flex items-center">
+                <!-- TIÊU ĐỀ CHÍNH CỘT BÊN TRÁI -->
+                <div class="bg-blue-900 text-white px-5 py-3 rounded-xl shadow-md flex items-center justify-between">
+                    <h2 class="text-lg font-extrabold tracking-wider flex items-center">
+                        <i class="fa-solid fa-database mr-2.5 text-yellow-400"></i> DỮ LIỆU ĐẦU VÀO
+                    </h2>
+                    <span class="text-xs bg-blue-700 text-blue-100 px-2.5 py-1 rounded-full font-medium">Nhập thông số DMA</span>
+                </div>
+
+                <!-- KHỐI 1: Dữ liệu vận hành (Tô viền ĐỎ nổi bật) -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-red-500 relative">
+                    <div class="absolute -top-3 right-4 bg-red-500 text-white text-xs font-bold px-3 py-0.5 rounded-full shadow-sm">
+                        Khối 1
+                    </div>
+                    <h2 class="text-lg font-bold text-red-700 border-b pb-3 mb-4 flex items-center">
                         <i class="fa-solid fa-sliders mr-2"></i> 1. Dữ liệu Vận hành Đêm & Ngày
                     </h2>
                     <div class="space-y-4 text-sm">
                         <div>
                             <label class="block font-medium text-slate-700">Lưu lượng đêm tối thiểu (Q<sub>MNF</sub>) [m³/h]:</label>
-                            <input type="number" step="0.01" id="q_mnf" value="11.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" step="0.01" id="q_mnf" value="11.0" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Giá trị lưu lượng tổng thấp nhất đo qua Datalogger/SCADA (thường từ 1h - 3h sáng).</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Áp lực ban đêm (P<sub>đêm</sub>) [mH<sub>2</sub>O]:</label>
-                            <input type="number" step="0.1" id="p_dem" value="23.2" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" step="0.1" id="p_dem" value="23.2" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Áp lực trung bình mạng lưới đo đếm được tại thời điểm xảy ra Q<sub>MNF</sub> (1 bar ≈ 10 mH<sub>2</sub>O).</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Khách hàng lớn dùng đêm (Q<sub>khách_lớn</sub>) [m³/h]:</label>
-                            <input type="number" step="0.01" id="q_khach_lon" value="0.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" step="0.01" id="q_khach_lon" value="0.0" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng tiêu thụ đêm thực tế của bệnh viện, khách sạn, nhà máy ca đêm... ghi nhận từ AMR/Datalogger.</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Áp lực trung bình 24h (P<sub>TB</sub>) [mH<sub>2</sub>O]:</label>
-                            <input type="number" step="0.1" id="p_tb" value="22.95" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" step="0.1" id="p_tb" value="22.95" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Trung bình cộng 24 giá trị áp lực theo giờ trong ngày của vùng DMA.</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Tổng lưu lượng cấp ngày (Q<sub>tổng</sub>) [m³/ngđ]:</label>
-                            <input type="number" step="0.1" id="q_tong" value="918.2" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" step="0.1" id="q_tong" value="918.2" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng khối lượng nước cấp vào vùng DMA trong cả ngày đêm 24 giờ.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Nhóm 2: Hạ tầng DMA -->
-                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                    <h2 class="text-lg font-bold text-blue-800 border-b pb-3 mb-4 flex items-center">
+                <!-- KHỐI 2: Hạ tầng DMA (Tô viền XANH LÁ CÂY nổi bật) -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-500 relative">
+                    <div class="absolute -top-3 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-0.5 rounded-full shadow-sm">
+                        Khối 2
+                    </div>
+                    <h2 class="text-lg font-bold text-emerald-800 border-b pb-3 mb-4 flex items-center">
                         <i class="fa-solid fa-network-wired mr-2"></i> 2. Hạ tầng Mạng lưới DMA
                     </h2>
                     <div class="space-y-4 text-sm">
                         <div>
                             <label class="block font-medium text-slate-700">Số lượng đấu nối khách hàng (N<sub>c</sub>) [cái]:</label>
-                            <input type="number" id="n_c" value="400" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" id="n_c" value="400" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng số đồng hồ đo đếm khách hàng/hộ dân trong khu vực DMA.</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Chiều dài ống chính (L<sub>m</sub>) [km]:</label>
-                            <input type="number" step="0.01" id="l_m" value="5.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" step="0.01" id="l_m" value="5.0" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng chiều dài các tuyến ống truyền dẫn và phân phối chính.</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Chiều dài ống dịch vụ (L<sub>c</sub>) [km]:</label>
-                            <input type="number" step="0.01" id="l_c" value="2.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" step="0.01" id="l_c" value="2.0" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Tổng chiều dài ống đấu nối từ ống chính đến vị trí đồng hồ khách hàng.</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Định mức dùng đêm dân cư (q<sub>đm</sub>) [lít/đ nối/h]:</label>
-                            <input type="number" step="0.1" id="q_dm" value="2.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" step="0.1" id="q_dm" value="2.0" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Định mức nhu cầu đêm tiêu chuẩn IWA (thường lấy từ 1.0 - 2.5 lít/đấu nối/giờ).</span>
                         </div>
                         <div>
                             <label class="block font-medium text-slate-700">Hệ số mũ áp lực (N):</label>
-                            <input type="number" step="0.1" id="n_exp" value="1.0" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <input type="number" step="0.1" id="n_exp" value="1.0" onclick="this.select()" class="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 transition-all duration-150">
                             <span class="sub-text"><i class="fa-solid fa-circle-info mr-1"></i>Phản ánh vật liệu ống (Ống kim loại: N=0.5-1.0; Ống nhựa: N=1.0-1.5; Mạng hỗn hợp: N=1.0).</span>
                         </div>
                     </div>
-
-                    <button onclick="calculateNRW()" class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow transition duration-200 flex items-center justify-center">
-                        <i class="fa-solid fa-calculator mr-2"></i> TÍNH TOÁN KẾT QUẢ
-                    </button>
                 </div>
+
+                <!-- NÚT TÍNH TOÁN (Tách ra thành một khối độc lập riêng biệt) -->
+                <div class="bg-white p-5 rounded-2xl shadow-md border border-slate-300">
+                    <button onclick="calculateNRW()" class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-extrabold text-base py-3.5 px-4 rounded-xl shadow-lg transition duration-200 flex items-center justify-center tracking-wide">
+                        <i class="fa-solid fa-calculator mr-2.5 text-lg"></i> TÍNH TOÁN KẾT QUẢ
+                    </button>
+                    <p class="text-center text-xs text-slate-400 mt-2">Nhấn để cập nhật toàn bộ kết quả phân tích bên phải</p>
+                </div>
+
             </div>
 
             <!-- HIỂN THỊ KẾT QUẢ VÀ TÍNH TOÁN CHI TIẾT (Right Column) -->
             <div class="lg:col-span-7 space-y-6">
                 
                 <!-- Bảng tổng hợp kết quả cuối cùng -->
-                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200">
                     <h2 class="text-xl font-bold text-slate-800 border-b pb-3 mb-4 flex items-center justify-between">
                         <span><i class="fa-solid fa-chart-pie text-blue-600 mr-2"></i> KẾT QUẢ TÍNH TOÁN CUỐI CÙNG</span>
                         <span class="text-xs font-semibold px-2.5 py-1 bg-blue-100 text-blue-800 rounded-full">Tiêu chuẩn IWA</span>
@@ -156,7 +181,7 @@
                 </div>
 
                 <!-- Chi tiết từng bước tính toán -->
-                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200 space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200 space-y-6">
                     <h2 class="text-lg font-bold text-slate-800 border-b pb-3">
                         <i class="fa-solid fa-list-check text-blue-600 mr-2"></i> CHI TIẾT CÁC BƯỚC TÍNH TOÁN HỆ THỐNG
                     </h2>
@@ -227,7 +252,7 @@
         <p class="mt-1">Xây dựng theo hướng dẫn thực hành quản lý thất thoát nước của Hội Nước Quốc tế (IWA)</p>
     </footer>
 
-    <!-- SCRIPT TÍNH TOÁN JAVASCRIPT -->
+    <!-- SCRIPT TÍNH TOÁN JAVASCRIPT & XỬ LÝ TỰ ĐỘNG BÔI ĐEN -->
     <script>
         function calculateNRW() {
             // Lấy dữ liệu từ ô nhập
@@ -283,6 +308,13 @@
             document.getElementById('step4_val').innerText = q_rori_ngay.toFixed(2);
             document.getElementById('step5_val').innerText = ty_le_rori.toFixed(2);
         }
+
+        // Tự động bôi đen toàn bộ chữ/số khi focus vào ô input
+        document.querySelectorAll('input[type="number"]').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.select();
+            });
+        });
 
         // Tự động tính khi load trang lần đầu
         window.onload = function() {
