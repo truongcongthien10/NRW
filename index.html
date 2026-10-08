@@ -199,13 +199,13 @@
 
                     <!-- Bước 2 -->
                     <div class="border-l-4 border-blue-500 pl-4 py-1">
-                        <h3 class="font-bold text-slate-700">Bước 2: Tiêu thụ nước đêm hợp lệ của Khách hàng (Q<sub>khách_đêm</sub>)</h3>
+                        <h3 class="font-bold text-slate-700">Bước 2: Tiêu thụ nước đêm hợp lệ của Khách hàng (Q<sub>kh.đêm</sub>)</h3>
                         <span class="sub-text mb-2">Tổng lượng nước khách hàng thực tế tiêu thụ ban đêm (bao gồm hộ dân tiêu thụ nhỏ lẻ & khách hàng lớn).</span>
                         <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
                             $$Q_{\text{khách\_đêm}} = Q_{\text{khách\_lớn}} + \frac{N_c \cdot q_{\text{đm}}}{1000}$$
                         </p>
                         <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>khách_đêm</sub>: <span id="step2_val">--</span> m³/h</p>
-                        <span class="sub-text">Bao gồm xả bể tự động hộ gia đình, sử dụng sinh hoạt đêm và các đơn vị dịch vụ/ca đêm.</span>
+                        <span class="sub-text">Bao gồm xả nước các hộ gia đình, sử dụng sinh hoạt đêm và các dịch vụ/ca đêm.</span>
                     </div>
 
                     <!-- Bước 3 -->
@@ -215,16 +215,16 @@
                         <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
                             $$Q_{\text{RealLoss\_đêm}} = Q_{\text{MNF}} - Q_{\text{khách\_đêm}} - Q_b$$
                         </p>
-                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>RealLoss_đêm</sub>: <span id="step3_val">--</span> m³/h</p>
-                        <span class="sub-text">Giá trị rò rỉ ròng tại mốc thời điểm đêm tối thiểu (1h00 - 3h00 sáng).</span>
+                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>RealLoss.đêm</sub>: <span id="step3_val">--</span> m³/h</p>
+                        <span class="sub-text">Giá trị rò rỉ tại mốc thời điểm đêm tối thiểu (1h00 - 3h00 sáng).</span>
                     </div>
 
                     <!-- Bước 4 -->
                     <div class="border-l-4 border-blue-500 pl-4 py-1">
-                        <h3 class="font-bold text-slate-700">Bước 4: Tổng lượng rò rỉ cả ngày đêm 24h (Q<sub>Rò_rỉ_ngày</sub>)</h3>
+                        <h3 class="font-bold text-slate-700">Bước 4: Tổng lượng rò rỉ cả ngày đêm 24h (Q<sub>Rò rỉ / ngày</sub>)</h3>
                         <span class="sub-text mb-2">Quy đổi lượng rò rỉ trong cả 24 giờ có hiệu chỉnh theo sự giảm áp lực ban ngày (P<sub>TB</sub>).</span>
                         <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
-                            $$Q_{\text{Rò\_rỉ\_ngày}} = 24 \cdot Q_{\text{RealLoss\_đêm}} \cdot \left(\frac{P_{\text{TB}}}{P_{\text{đêm}}}\right)^N$$
+                            $$Q_{\text{Rò rỉ / ngày}} = 24 \cdot Q_{\text{RealLoss.đêm}} \cdot \left(\frac{P_{\text{TB}}}{P_{\text{đêm}}}\right)^N$$
                         </p>
                         <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>Rò_rỉ_ngày</sub>: <span id="step4_val">--</span> m³/ngđ</p>
                         <span class="sub-text">Do ban ngày áp lực giảm do nhu cầu dùng nước tăng, lượng rò rỉ thực tế ban ngày sẽ tự động giảm tương ứng.</span>
@@ -235,7 +235,7 @@
                         <h3 class="font-bold text-slate-700">Bước 5: Tỷ lệ Rò rỉ Thực sự (Real Loss %)</h3>
                         <span class="sub-text mb-2">Tỷ lệ phần trăm giữa tổng lượng nước rò rỉ thực sự trong ngày với tổng lưu lượng nước cấp vào DMA.</span>
                         <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
-                            $$\text{Tỷ lệ Rò rỉ (\%)} = \left(\frac{Q_{\text{Rò\_rỉ\_ngày}}}{Q_{\text{tổng}}}\right) \cdot 100\%$$
+                            $$\text{Tỷ lệ Rò rỉ (%)} = \left(\frac{Q_{\text{Rò rỉ / ngày}}}{Q_{\text{tổng}}}\right) \cdot 100\%$$
                         </p>
                         <p class="text-sm font-semibold text-green-700 mt-2">Kết quả Tỷ lệ Rò rỉ: <span id="step5_val">--</span> %</p>
                         <span class="sub-text">Chỉ số đánh giá chính xác hiệu quả quản lý chống thất thoát nước (NRW) cho vùng DMA.</span>
