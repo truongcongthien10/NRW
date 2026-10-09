@@ -169,7 +169,7 @@
                     <!-- So sánh phương pháp -->
                     <div class="bg-slate-50 p-4 rounded-lg border text-sm space-y-2">
                         <div class="flex justify-between items-center text-slate-600">
-                            <span>Tỷ lệ thất thoát thô (Coi toàn bộ Q<sub>MNF</sub> là rò rỉ):</span>
+                            <span>Tỷ lệ thất thoát thô (xem toàn bộ Q<sub>MNF</sub> là rò rỉ):</span>
                             <span class="font-semibold" id="raw_percent">-- %</span>
                         </div>
                         <div class="flex justify-between items-center text-slate-600">
@@ -188,12 +188,12 @@
 
                     <!-- Bước 1 -->
                     <div class="border-l-4 border-blue-500 pl-4 py-1">
-                        <h3 class="font-bold text-slate-700">Bước 1: Rò rỉ nền cho phép (Q<sub>b</sub>)</h3>
+                        <h3 class="font-bold text-slate-700">Bước 1: Rò rỉ nền cho phép (Q<sub>n</sub>)</h3>
                         <span class="sub-text mb-2">Lượng rò rỉ nền rải rác không thể tránh khỏi tại các mối nối, van, khớp nối ở mức áp lực ban đêm P<sub>đêm</sub>.</span>
                         <p class="text-sm font-mono bg-slate-100 p-2.5 rounded border overflow-x-auto">
-                            $$Q_b = \frac{(0.015 \cdot L_m + 0.016 \cdot N_c + 0.0004 \cdot L_c) \cdot P_{\text{đêm}}}{1000}$$
+                            $$Q_n = \frac{(0.015 \cdot L_m + 0.016 \cdot N_c + 0.0004 \cdot L_c) \cdot P_{\text{đêm}}}{1000}$$
                         </p>
-                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>b</sub>: <span id="step1_val">--</span> m³/h</p>
+                        <p class="text-sm font-semibold text-blue-700 mt-2">Kết quả Q<sub>n</sub>: <span id="step1_val">--</span> m³/h</p>
                         <span class="sub-text">Hệ số 0.015 (ống chính), 0.016 (đấu nối), 0.0004 (ống dịch vụ) tính theo lít/giờ trên 1 mH<sub>2</sub>O áp lực.</span>
                     </div>
 
